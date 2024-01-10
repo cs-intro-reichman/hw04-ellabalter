@@ -22,13 +22,54 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        
+        //String s = "One two tHRee world";
+        //System.out.println(capVowelsLowRest(s));
+
     }
 
-    public static String capVowelsLowRest (String string) {
-        // Write your code here:
-        return "";
+    public static String capVowelsLowRest(String s) {
+        String modifiedVowels = "";
+        String vowels = "aeiouAEIOU";
+
+        for (int i = 0; i < s.length(); i++)
+        {
+            char c = s.charAt(i);
+            for (int j = 0; j < vowels.length(); j++)
+            {
+
+                if (s.charAt(i) == vowels.charAt(j))
+                {
+                    if ('a' <= s.charAt(i) &&  s.charAt(i) <= 'z')
+                    {
+                        c = ((char) (c - 32));
+                    }
+                }
+                else
+                {
+                    if ('A' <= s.charAt(i) && s.charAt(i) <= 'Z')
+                    {
+                        c = ((char) (c + 32));
+                        break;
+                    }
+                }
+            }
+            modifiedVowels = modifiedVowels + c;
+        }
+        return modifiedVowels;
     }
+
+
+
+
+    // for (int i = 0; i < length; i++) {
+    //            char c = s.charAt(i);
+    //            if (s.charAt(i) >= 65 && s.charAt(i) <= 90) {
+    //                strConversion = strConversion + ((char) (c + 32));
+    //                }
+    //                else {
+    //                strConversion = strConversion + ((char) c);
+    //
+    //            }
 
     public static String camelCase (String string) {
         // Write your code here:
