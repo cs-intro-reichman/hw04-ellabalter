@@ -22,8 +22,8 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        //String s = "One two tHRee world";
-        //System.out.println(capVowelsLowRest(s));
+        String s = "One two tHRee world";
+        System.out.println(capVowelsLowRest(s));
 
     }
 
@@ -34,23 +34,15 @@ public class StringOps {
         for (int i = 0; i < s.length(); i++)
         {
             char c = s.charAt(i);
-            for (int j = 0; j < vowels.length(); j++)
-            {
+            if ( (vowels.indexOf(c) == -1) && (s.charAt(i) >= 'A') && (s.charAt(i) <= 'Z')){
+                c = (char) (c + 32);
 
-                if (s.charAt(i) == vowels.charAt(j))
+            }
+            else
+            {
+                if ((vowels.indexOf(c) != -1) && (s.charAt(i) >= 'a') && (s.charAt(i) <= 'z'))
                 {
-                    if ('a' <= s.charAt(i) &&  s.charAt(i) <= 'z')
-                    {
-                        c = ((char) (c - 32));
-                    }
-                }
-                else
-                {
-                    if ('A' <= s.charAt(i) && s.charAt(i) <= 'Z')
-                    {
-                        c = ((char) (c + 32));
-                        break;
-                    }
+                    c = (char) (c - 32);
                 }
             }
             modifiedVowels = modifiedVowels + c;
