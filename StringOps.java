@@ -24,10 +24,10 @@ public class StringOps {
     public static void main(String[] args) {
         //String s = "One two tHRee world";
         //System.out.println(capVowelsLowRest(s));
-     /*   int[] neww = allIndexOf("Hello world", 'l');
+        int[] neww = allIndexOf("Hello world", 'l');
         for (int i = 0; i < neww.length; i++){
             System.out.print(neww[i] + ",");
-        }*/
+        }
         System.out.println(camelCase("Intro to coMPUter sCIEncE"));
     }
 
@@ -108,7 +108,6 @@ public class StringOps {
                 counter++;
             }
         }
-        System.out.println(counter);
 
         int[] charIndex = new int[counter];
         int currentIndex = 0;
